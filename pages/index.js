@@ -1,6 +1,6 @@
 import Head from "next/head";
-import MealList from "./components/MealList";
-import GlobalStyles from "./components/styles/Global";
+import MealList from "../components/MealList";
+import GlobalStyles from "../components/styles/Global";
 
 export default function Home() {
   return (

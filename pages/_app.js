@@ -1,5 +1,5 @@
-import { AppContextProvider } from "./components/Context";
-import Layout from "./components/Layout";
+import { AppContextProvider } from "../components/Context";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
