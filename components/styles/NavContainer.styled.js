@@ -5,4 +5,5 @@ export const NavContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 `;

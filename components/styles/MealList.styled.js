@@ -4,5 +4,5 @@ export const StyledMealList = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 1rem 2rem 4rem 2rem;
 `;

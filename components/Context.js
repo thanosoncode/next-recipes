@@ -8,16 +8,17 @@ export const AppContextProvider = ({ children }) => {
   const [term, setTerm] = useState("");
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState("");
+  const [region, setRegion] = useState("");
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
   };
 
-  const fetchRecipes = async () => {
+  const fetchRecipes = async (param) => {
     setLoading(true);
     try {
-      const response = await fetch(url + term);
-
+      const response = await fetch(param);
       const data = await response.json();
 
       const { meals } = data;
@@ -49,8 +50,22 @@ export const AppContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchRecipes();
+    fetchRecipes(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
+    );
   }, [term]);
+
+  useEffect(() => {
+    fetchRecipes(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+    );
+  }, [category]);
+
+  useEffect(() => {
+    fetchRecipes(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?a=${region}`
+    );
+  }, [region]);
 
   const value = {
     term,
@@ -58,6 +73,10 @@ export const AppContextProvider = ({ children }) => {
     handleSubmitForm,
     loading,
     meals,
+    category,
+    setCategory,
+    region,
+    setRegion,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

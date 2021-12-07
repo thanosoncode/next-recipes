@@ -43,7 +43,7 @@ const Meal = () => {
       try {
         const res = await fetch(url + id);
         const data = await res.json();
-        console.log(data);
+
         if (data.meals) {
           setMeal(data.meals[0]);
         } else {
