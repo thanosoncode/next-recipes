@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 import { StyledInput } from "./styles/Input.styled";
@@ -13,7 +14,7 @@ const Navbar = () => {
       <NavContainer>
         <Nav>
           <div>
-            <img src="./logo.png" alt="" />
+            <Image src="/logo.png" width="30px" height="30px" />
           </div>
           <h1>Next-Recipes</h1>
           <span>

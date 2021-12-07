@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { StyledMeal } from "./styles/Meal.styled.js";
+import { StyledInfo } from "./styles/Meal.styled.js";
 
 const Meal = ({ meal }) => {
   const { id, name, reviews, region, category, image } = meal;
@@ -6,15 +8,19 @@ const Meal = ({ meal }) => {
   return (
     <Link href="/meal/[id]" as={`/meal/${id}`}>
       <a>
-        <div key={id}>
+        <StyledMeal key={id}>
           <img src={image} alt={name} style={{ width: "200px" }} />
-          <div>
-            <h3>{name}</h3>
-            <p>{reviews}</p>
-            <span>{region}</span>
-            <span>{category}</span>
-          </div>
-        </div>
+          <StyledInfo>
+            <div>
+              <h3>{name}</h3>
+              <p>{reviews}</p>
+            </div>
+            <div>
+              <span>{category}</span>
+              <span>{region}</span>
+            </div>
+          </StyledInfo>
+        </StyledMeal>
       </a>
     </Link>
   );

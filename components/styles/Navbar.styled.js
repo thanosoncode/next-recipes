@@ -7,10 +7,7 @@ export const Nav = styled.nav`
   padding-top: 2rem;
   width: 250px;
   gap: 10px;
-  div img {
-    width: 40px;
-    height: auto;
-  }
+
   span {
     display: flex;
     justify-content: center;
