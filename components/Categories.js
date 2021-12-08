@@ -55,7 +55,7 @@ const Categories = () => {
           strCategoryThumb: image,
         } = item;
         return (
-          <Link href="/">
+          <Link href="/" key={id}>
             <StyledCategory key={id} onClick={() => setCategory(name)}>
               <h4>{name}</h4>
               <img src={image} alt="" />

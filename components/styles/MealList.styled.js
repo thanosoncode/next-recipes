@@ -5,4 +5,8 @@ export const StyledMealList = styled.section`
   flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem 2rem 4rem 2rem;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    justify-content: center;
+  }
 `;

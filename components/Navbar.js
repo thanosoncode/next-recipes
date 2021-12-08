@@ -18,10 +18,14 @@ const Navbar = () => {
     <>
       <NavContainer>
         <Nav>
-          <div>
-            <Image src="/logo.png" width="30px" height="30px" />
-          </div>
-          <h1>Next-Recipes</h1>
+          <Link href="/" passHref>
+            <a>
+              <div>
+                <Image src="/logo.png" width="30px" height="30px" />
+              </div>
+              <h1>allrecipes</h1>
+            </a>
+          </Link>
         </Nav>
         <form onSubmit={handleSubmitForm}>
           <StyledInput>
@@ -42,12 +46,15 @@ const Navbar = () => {
           </StyledInput>
         </form>
       </NavContainer>
-      <StyledDropDownMenu opacity={menu ? "1" : "0"}>
+      <StyledDropDownMenu
+        opacity={menu ? "1" : "0"}
+        visibility={menu ? "visible" : "hidden"}
+      >
         <Link href="/categories">
-          <div>Categories</div>
+          <div onClick={() => setMenu(false)}>Categories</div>
         </Link>
         <Link href="/regions">
-          <div>Regions</div>
+          <div onClick={() => setMenu(false)}>Regions</div>
         </Link>
       </StyledDropDownMenu>
     </>

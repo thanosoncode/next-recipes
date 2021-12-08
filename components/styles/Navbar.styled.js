@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2rem;
-  width: 250px;
-  gap: 10px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    width: 250px;
+    gap: 10px;
+  }
 
   span {
     display: flex;
@@ -20,6 +22,7 @@ export const StyledDropDownMenu = styled.div`
   opacity: ${(props) => props.opacity};
   text-align: center;
   margin-top: 0.4rem;
+  visibility: ${(props) => props.visibility};
   transition: 0.5s ease;
 
   div {

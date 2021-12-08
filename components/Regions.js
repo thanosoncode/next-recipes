@@ -43,8 +43,8 @@ const Regions = () => {
     <StyledRegionsList>
       {regions.map((item, index) => {
         return (
-          <Link href="/">
-            <StyledRegion key={index} onClick={() => setRegion(item.strArea)}>
+          <Link href="/" passHref key={index}>
+            <StyledRegion onClick={() => setRegion(item.strArea)}>
               {item.strArea}
             </StyledRegion>
           </Link>
