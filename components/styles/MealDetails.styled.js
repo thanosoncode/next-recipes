@@ -46,6 +46,12 @@ export const Flex = styled.div`
   section {
     flex: 1;
   }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    section:last-child {
+      margin-left: 0.5rem;
+    }
+  }
 `;
 
 export const List = styled.div`

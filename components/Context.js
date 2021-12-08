@@ -13,6 +13,10 @@ export const AppContextProvider = ({ children }) => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    console.log(term);
+    fetchRecipes(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
+    );
   };
 
   const fetchRecipes = async (param) => {
