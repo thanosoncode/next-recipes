@@ -6,6 +6,7 @@ export const StyledCategoriesList = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 2rem 4rem;
+  padding-top: 0.5rem;
 `;
 
 export const StyledCategory = styled.article`

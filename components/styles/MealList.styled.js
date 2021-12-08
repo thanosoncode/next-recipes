@@ -8,5 +8,6 @@ export const StyledMealList = styled.section`
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     justify-content: center;
+    padding: 0 0.2rem;
   }
 `;

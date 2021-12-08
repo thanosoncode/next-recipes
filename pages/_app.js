@@ -4,8 +4,8 @@ import GlobalStyles from "../components/styles/Global";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  color: "red",
-  mobile: "768px",
+  color: "#F15025",
+  mobile: "568px",
 };
 
 function MyApp({ Component, pageProps }) {

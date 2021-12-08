@@ -2,8 +2,12 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { StyledMealDetails } from "../../../components/styles/MealDetails.styled.js";
-import { Flex } from "../../../components/styles/MealDetails.styled.js";
-import { FlexList } from "../../../components/styles/MealDetails.styled.js";
+import {
+  Flex,
+  List,
+  Item,
+} from "../../../components/styles/MealDetails.styled.js";
+
 import { StyledReadMore } from "../../../components/styles/MealDetails.styled.js";
 
 const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
@@ -72,34 +76,38 @@ const Meal = () => {
   }
   return (
     <StyledMealDetails>
-      <h1>{meal.strMeal}</h1>
+      <div>
+        <h1>{meal.strMeal}</h1>
+        <img src={meal.strMealThumb} alt="" />
+      </div>
       <Flex>
-        <div>
-          <img src={meal.strMealThumb} alt="" />
-        </div>
-        <div>
+        <section>
           <h2>Ingredients</h2>
-          {recipe.map((item, index) => {
-            return (
-              <FlexList key={index}>
-                <p>{item[0]}</p>
-                <p>{item[1]}</p>
-              </FlexList>
-            );
-          })}
-        </div>
+          <List>
+            {recipe.map((item, index) => {
+              return (
+                <Item key={index}>
+                  {item[1]}&nbsp;
+                  {item[0]}
+                </Item>
+              );
+            })}
+          </List>
+        </section>
+        <section>
+          <h3>Instructions</h3>
+          <p>
+            {meal.strInstructions.slice(0, 300)}
+            <span onClick={() => setReadMore(true)}>
+              {readMore ? (
+                meal.strInstructions.slice(300)
+              ) : (
+                <StyledReadMore>&nbsp;read more</StyledReadMore>
+              )}
+            </span>
+          </p>
+        </section>
       </Flex>
-      <h3>Instructions</h3>
-      <p>
-        {meal.strInstructions.slice(0, 300)}
-        <span onClick={() => setReadMore(true)}>
-          {readMore ? (
-            meal.strInstructions.slice(300)
-          ) : (
-            <StyledReadMore>&nbsp;read more</StyledReadMore>
-          )}
-        </span>
-      </p>
     </StyledMealDetails>
   );
 };

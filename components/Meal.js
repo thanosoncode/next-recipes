@@ -7,21 +7,19 @@ const Meal = ({ meal }) => {
 
   return (
     <Link href="/meal/[id]" as={`/meal/${id}`}>
-      <a>
-        <StyledMeal key={id}>
-          <img src={image} alt={name} style={{ width: "200px" }} />
-          <StyledInfo>
-            <div>
-              <h3>{name}</h3>
-              <p>{reviews}</p>
-            </div>
-            <div>
-              <span>{category}</span>
-              <span>{region}</span>
-            </div>
-          </StyledInfo>
-        </StyledMeal>
-      </a>
+      <StyledMeal key={id}>
+        <img src={image} alt={name} style={{ width: "200px" }} />
+        <StyledInfo>
+          <div>
+            <h3>{name}</h3>
+            <p>{reviews}</p>
+          </div>
+          <div>
+            <span>{category}</span>
+            <span>{region}</span>
+          </div>
+        </StyledInfo>
+      </StyledMeal>
     </Link>
   );
 };

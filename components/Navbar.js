@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useGlobalContext } from "./Context";
@@ -12,6 +12,12 @@ const Navbar = () => {
   const { handleSubmitForm, term, setTerm } = useGlobalContext();
 
   const [menu, setMenu] = useState(false);
+  const inputEl = useRef();
+
+  useEffect(() => {
+    inputEl.current.focus();
+  }, []);
+
   const handleMenuClick = () => setMenu(!menu);
 
   return (
@@ -35,8 +41,9 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search recipes"
-              onChange={(e) => {
-                setTerm(e.target.value);
+              ref={inputEl}
+              onChange={() => {
+                setTerm(inputEl.current.value);
                 console.log(term);
               }}
             />

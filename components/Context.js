@@ -5,7 +5,7 @@ const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState("a");
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("");

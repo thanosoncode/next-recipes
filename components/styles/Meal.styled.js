@@ -12,6 +12,9 @@ export const StyledMeal = styled.div`
   p {
     padding-top: 1rem;
   }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100vw;
+  }
 `;
 
 export const StyledInfo = styled.div`
@@ -24,5 +27,13 @@ export const StyledInfo = styled.div`
 
   span {
     margin-right: 1rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    div:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 `;

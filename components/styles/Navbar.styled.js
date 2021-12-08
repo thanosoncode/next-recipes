@@ -8,6 +8,7 @@ export const Nav = styled.nav`
     padding-top: 2rem;
     width: 250px;
     gap: 10px;
+    color: ${({ theme }) => theme.color};
   }
 
   span {
@@ -15,13 +16,24 @@ export const Nav = styled.nav`
     justify-content: center;
     align-items: center;
   }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    a {
+      width: 100vw;
+      margin: 0 auto;
+      padding-top: 0.1rem;
+    }
+  }
 `;
 
 export const StyledDropDownMenu = styled.div`
-  background-color: red;
   opacity: ${(props) => props.opacity};
   text-align: center;
-  margin-top: 0.4rem;
+  margin: 0.5rem auto;
+  max-width: 400px;
+  color: red;
+  border-radius: 5px;
+  border: 1px solid red;
+
   visibility: ${(props) => props.visibility};
   transition: 0.5s ease;
 
@@ -32,5 +44,9 @@ export const StyledDropDownMenu = styled.div`
 
   div:hover {
     background-color: lightsalmon;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100vw;
   }
 `;

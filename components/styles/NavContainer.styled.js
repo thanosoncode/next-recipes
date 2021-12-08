@@ -6,4 +6,7 @@ export const NavContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100vw;
+  }
 `;
