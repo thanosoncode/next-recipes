@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const StyledMealDetails = styled.article`
   margin: 3rem 2rem;
   max-width: 700px;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  /* background-color: #eee; */
+  margin: 1rem auto 3rem auto;
+
   border: 1px solid lightgray;
   padding: 1rem;
   border-radius: 10px;

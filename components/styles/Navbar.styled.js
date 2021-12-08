@@ -1,21 +1,32 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  gap: 1.5rem;
+
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
-    width: 250px;
     gap: 10px;
-    color: ${({ theme }) => theme.color};
+    color: white;
   }
 
-  span {
+  span,
+  div:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
   }
+
+  div:last-child {
+    font-size: 1.2rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.mobile}) {
     a {
       width: 100vw;
@@ -26,24 +37,30 @@ export const Nav = styled.nav`
 `;
 
 export const StyledDropDownMenu = styled.div`
+  display: flex;
+  background-color: white;
   opacity: ${(props) => props.opacity};
   text-align: center;
-  margin: 0.5rem auto;
+  height: 30px;
+  margin: 0 auto;
   max-width: 400px;
-  color: red;
+  color: black;
+  font-size: 0.9rem;
   border-radius: 5px;
   border: 1px solid red;
-
   visibility: ${(props) => props.visibility};
   transition: 0.5s ease;
 
   div {
     cursor: pointer;
     padding: 0.3rem;
+    margin: 0.1rem 0.5rem;
   }
 
-  div:hover {
+  div:hover,
+  div:active {
     background-color: lightsalmon;
+    color: white;
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {

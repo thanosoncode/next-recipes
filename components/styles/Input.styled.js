@@ -29,5 +29,8 @@ export const StyledInput = styled.div`
     height: 100%;
     padding-left: 2rem;
     width: 100%;
+    border-radius: 5px;
+    border: 1px solid ${({ theme }) => theme.secondary};
+    outline: none;
   }
 `;

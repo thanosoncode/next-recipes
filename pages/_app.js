@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   color: "#F15025",
+  secondary: "#EFA92E",
   mobile: "568px",
 };
 
