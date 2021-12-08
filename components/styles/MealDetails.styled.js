@@ -30,14 +30,11 @@ export const StyledMealDetails = styled.article`
     width: 350px;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    margin: 0.5rem;
+    margin: 1.5rem 1rem 4rem 1rem;
     padding: 0.5rem;
-    margin-bottom: 5rem;
+
     img {
       width: 100%;
-    }
-    section p {
-      font-size: 0.9rem;
     }
   }
 `;
@@ -57,15 +54,18 @@ export const List = styled.div`
   max-width: 350px;
   gap: 0.8rem 1rem;
   margin-top: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.4rem;
+  }
 `;
 
 export const Item = styled.span`
   border: 1px solid red;
   border-radius: 999px;
   padding: 0.2rem 0.4rem;
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    font-size: 0.9rem;
-  }
 `;
 
 export const StyledReadMore = styled.span`

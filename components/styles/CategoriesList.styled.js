@@ -10,6 +10,8 @@ export const StyledCategoriesList = styled.div`
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     padding: 1rem 1rem 3rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
 `;
@@ -37,7 +39,7 @@ export const StyledCategory = styled.article`
     margin-top: 1rem;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    max-width: 180px;
+    max-width: 200px;
     img {
       width: 164px;
     }
