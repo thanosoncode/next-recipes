@@ -6,7 +6,8 @@ export const Nav = styled.nav`
   align-items: center;
   width: 250px;
   gap: 1.5rem;
-
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
   a {
     display: flex;
     justify-content: center;
@@ -21,6 +22,7 @@ export const Nav = styled.nav`
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 1.4rem;
   }
 
   div:last-child {
@@ -28,10 +30,12 @@ export const Nav = styled.nav`
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 220px;
     a {
       width: 100vw;
       margin: 0 auto;
       padding-top: 0.1rem;
+      justify-content: flex-start;
     }
   }
 `;
@@ -41,7 +45,7 @@ export const StyledDropDownMenu = styled.div`
   background-color: white;
   opacity: ${(props) => props.opacity};
   text-align: center;
-  height: 30px;
+  height: 40px;
   margin: 0 auto;
   max-width: 400px;
   color: black;
@@ -64,6 +68,6 @@ export const StyledDropDownMenu = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100vw;
+    width: auto;
   }
 `;

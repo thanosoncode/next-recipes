@@ -7,6 +7,11 @@ export const StyledCategoriesList = styled.div`
   gap: 2rem;
   padding: 2rem 4rem;
   padding-top: 0.5rem;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    padding: 1rem 1rem 3rem 1rem;
+    gap: 0.5rem;
+  }
 `;
 
 export const StyledCategory = styled.article`
@@ -30,5 +35,11 @@ export const StyledCategory = styled.article`
   p {
     font-size: 0.9rem;
     margin-top: 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    max-width: 180px;
+    img {
+      width: 164px;
+    }
   }
 `;

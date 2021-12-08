@@ -14,6 +14,7 @@ export const StyledMeal = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100vw;
+    margin-bottom: 1rem;
   }
 `;
 

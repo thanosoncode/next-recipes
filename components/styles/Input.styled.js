@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledInput = styled.div`
   position: relative;
-  height: 30px;
+  height: 40px;
   width: 240px;
   margin: 0 auto;
   span,

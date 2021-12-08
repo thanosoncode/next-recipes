@@ -11,5 +11,6 @@ export const NavContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100vw;
+    padding: 1rem 0 2rem 0;
   }
 `;

@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link href="/" passHref>
             <a>
               <div>
-                <Image src="/logo.png" width="30px" height="30px" />
+                <Image src="/logo.png" width="50px" height="50px" />
               </div>
               <h1>allrecipes</h1>
             </a>
