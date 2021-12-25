@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useGlobalContext } from "./Context";
 import { StyledRegionsList, StyledRegion } from "./styles/RegionsList.styled";
+import Loading from "./Loading";
 
 const url = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
 
 const Regions = () => {
-  const { setRegion } = useGlobalContext();
+  const { setRegion, menu, setMenu } = useGlobalContext();
 
   const [regions, setRegions] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ const Regions = () => {
   }, []);
 
   if (loading) {
-    return <h4>Loading...</h4>;
+    return <Loading />;
   }
   if (!regions) {
     return <h4>sorry something went wrong</h4>;
@@ -44,7 +45,12 @@ const Regions = () => {
       {regions.map((item, index) => {
         return (
           <Link href="/" passHref key={index}>
-            <StyledRegion onClick={() => setRegion(item.strArea)}>
+            <StyledRegion
+              onClick={() => {
+                setMenu(!menu);
+                setRegion(item.strArea);
+              }}
+            >
               {item.strArea}
             </StyledRegion>
           </Link>

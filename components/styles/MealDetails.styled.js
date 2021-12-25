@@ -62,9 +62,7 @@ export const List = styled.div`
   margin-top: 1rem;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 0.4rem;
+    margin-bottom:0.5rem;
   }
 `;
 

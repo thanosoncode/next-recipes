@@ -10,10 +10,10 @@ export const AppContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("");
   const [region, setRegion] = useState("");
+  const [menu, setMenu] = useState(false);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    console.log(term);
     fetchRecipes(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
     );
@@ -81,6 +81,8 @@ export const AppContextProvider = ({ children }) => {
     setCategory,
     region,
     setRegion,
+    menu,
+    setMenu,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

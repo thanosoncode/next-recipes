@@ -6,17 +6,15 @@ import {
   StyledCategoriesList,
   StyledCategory,
 } from "./styles/CategoriesList.styled";
+import Loading from "./Loading";
 
 const url = "https://www.themealdb.com/api/json/v1/1/categories.php";
 
 const Categories = () => {
-  const { category, setCategory } = useGlobalContext();
+  const { category, setCategory, menu, setMenu } = useGlobalContext();
 
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [readMore, setReadMore] = useState(false);
-
-  const handleReadMore = (id) => {};
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +25,6 @@ const Categories = () => {
         const data = await res.json();
         if (data) {
           setCategories(data.categories);
-          console.log(data.categories);
         } else {
           setCategories([]);
         }
@@ -40,7 +37,7 @@ const Categories = () => {
     fetchCategories();
   }, []);
   if (loading) {
-    return <h4>Loading...</h4>;
+    return <Loading />;
   }
   if (!categories) {
     return <h4>sorry something went wrong</h4>;
@@ -56,7 +53,13 @@ const Categories = () => {
         } = item;
         return (
           <Link href="/" key={id}>
-            <StyledCategory key={id} onClick={() => setCategory(name)}>
+            <StyledCategory
+              key={id}
+              onClick={() => {
+                setCategory(name);
+                setMenu(!menu);
+              }}
+            >
               <h4>{name}</h4>
               <img src={image} alt="" />
               <p>

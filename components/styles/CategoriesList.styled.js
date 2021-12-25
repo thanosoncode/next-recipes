@@ -6,7 +6,6 @@ export const StyledCategoriesList = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 2rem 4rem;
-  padding-top: 0.5rem;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     padding: 1rem 1rem 3rem 1rem;

@@ -1,12 +1,13 @@
 import { useGlobalContext } from "./Context";
 import Meal from "./Meal";
+import Loading from "./Loading";
 import { StyledMealList } from "./styles/MealList.styled.js";
 
 const MealList = () => {
   const { meals, loading } = useGlobalContext();
 
   if (loading) {
-    return <div>loading...</div>;
+    return <Loading />;
   }
   if (meals < 1) {
     return <h4>Couldn&apos;t find recipes with that criteria</h4>;

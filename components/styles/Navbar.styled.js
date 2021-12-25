@@ -17,8 +17,8 @@ export const Nav = styled.nav`
     color: white;
   }
 
-  span,
-  div:last-child {
+  span
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,9 +26,6 @@ export const Nav = styled.nav`
     font-size: 1.4rem;
   }
 
-  div:last-child {
-    font-size: 1.4rem;
-  }
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 240px;
@@ -66,6 +63,9 @@ export const StyledDropDownMenu = styled.div`
     cursor: pointer;
     padding: 0.3rem;
     margin: 0.1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   div:hover,
@@ -81,5 +81,17 @@ export const StyledDropDownMenu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.4rem;
+    margin-left: 10px;
   }
 `;

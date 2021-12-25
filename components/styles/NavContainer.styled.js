@@ -8,6 +8,8 @@ export const NavContainer = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.color};
   padding: 1rem 0;
+  margin: 0 auto;
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100vw;

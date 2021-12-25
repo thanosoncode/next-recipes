@@ -27,7 +27,7 @@ export const StyledInput = styled.div`
 
   input {
     height: 100%;
-    padding-left: 2rem;
+    padding-left: 3rem;
     width: 100%;
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme.secondary};
